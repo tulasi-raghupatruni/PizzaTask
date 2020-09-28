@@ -1,0 +1,50 @@
+<div class="example-container mat-elevation-z8">
+<mat-table [dataSource]='dataSource'>
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element; let i = index"> {{element.id}} </td>
+      </ng-container>
+    <ng-container matColumnDef="customerName">
+        <mat-header-cell *matHeaderCellDef >Customer-Name</mat-header-cell>
+        <mat-cell *matCellDef= "let element">{{element.customerName}}</mat-cell>  
+    </ng-container>
+    <ng-container matColumnDef="itemsOrdered">
+        <mat-header-cell *matHeaderCellDef >Items-Ordered</mat-header-cell>
+        <mat-cell *matCellDef= "let element">{{element.itemsOrdered}}</mat-cell>  
+    </ng-container>
+    <ng-container matColumnDef="totalAmount">
+        <mat-header-cell *matHeaderCellDef >Total-Amount</mat-header-cell>
+        <mat-cell *matCellDef= "let element">{{element.totalAmount}}</mat-cell>  
+    </ng-container>
+    <ng-container matColumnDef="orderStatus">
+        <mat-header-cell *matHeaderCellDef >Order-Status</mat-header-cell>
+        <mat-cell *matCellDef= "let element">{{element.orderStatus}} &nbsp;
+            <button type="change-status" 
+            mat-raised-button color="primary" 
+            (click)="onChangeStatus(element)" [disabled]="element.disableStatus">Status</button> 
+        </mat-cell> 
+    </ng-container>
+    <ng-container matColumnDef="profile">
+        <mat-header-cell *matHeaderCellDef ></mat-header-cell>
+        <mat-cell *matCellDef= "let element">
+            <button type="change-status" 
+            mat-raised-button color="primary" 
+            (click)="showMoreInfo(element)">More...</button> 
+        </mat-cell> 
+    </ng-container>
+    <ng-container matColumnDef="expandedDetail">
+        <mat-cell *matCellDef="let detail"> 
+          Profile: <img src={{detail.element.profile}} />
+          Customer name : {{ detail.element.customerName}} and Items :{{detail.element.description}}
+        </mat-cell>
+      </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"
+    matRipple 
+    class="element-row">
+    </mat-row>
+   
+</mat-table>
+</div>
+<app-orders-status *ngIf="showInfo" [ctMsg]="content"></app-orders-status>
+
