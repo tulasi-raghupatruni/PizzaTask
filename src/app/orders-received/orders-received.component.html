@@ -1,8 +1,9 @@
+<mat-toolbar>Pizza Orders</mat-toolbar>
 <div class="example-container mat-elevation-z8">
 <mat-table [dataSource]='dataSource'>
     <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element; let i = index"> {{element.id}} </td>
+         <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+         <mat-cell *matCellDef="let element; let i = index">{{element.id}} </mat-cell>
       </ng-container>
     <ng-container matColumnDef="customerName">
         <mat-header-cell *matHeaderCellDef >Customer-Name</mat-header-cell>

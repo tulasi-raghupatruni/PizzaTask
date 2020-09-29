@@ -1,23 +1,18 @@
 <div>
     <br />
 </div>
-<mat-card>
+<div style="flex-direction: row;justify-content: center;"></div>
+<mat-card style="max-width: 50%; left: 25%;">
     <mat-card-content>
-        <p>
-            Name: {{ctMsg.customerName}}
-        </p>
-        <p>
-            Items:{{ctMsg.items}}
-               </p>
-        <p>
-            Total Price: {{ctMsg.totalAmount}}
-        </p>
-        <p>
-         Content: {{ctMsg.description}}
-        </p>
-        <p>
-        address:{{ctMsg.address}}
-           </p>
-           
+        <div class="col-sm-3">
+           Name:{{ctMsg.customerName}} 
+        </div>
+           Items: {{ctMsg.items}}
+           <div>
+        Total Price: {{ctMsg.totalAmount}}
+    </div>
+        <div class="col-sm-3">
+            Address: {{ctMsg.address}}
+        </div>
       </mat-card-content>
 </mat-card>

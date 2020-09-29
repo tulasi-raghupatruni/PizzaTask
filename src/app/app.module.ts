@@ -8,7 +8,9 @@ import { OrdersStatusComponent } from './orders-status/orders-status.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import {MatRippleModule} from '@angular/material/core';
+import { MatToolbarModule }from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     MatTableModule,
     MatButtonModule,
+    MatToolbarModule,
     MatRippleModule,
+    MatCardModule,
     BrowserAnimationsModule
   ],
   providers: [],
